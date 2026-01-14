@@ -10,16 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onPreOrderClick }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-8 pb-20 overflow-hidden bg-gray-50">
-      {/* Subtle grid background */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}
-      />
-
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-8 pb-20 overflow-hidden bg-[#f7f7f7]">
       <div className="relative max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Text Content */}
