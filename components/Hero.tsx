@@ -10,7 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onPreOrderClick }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-8 pb-20 overflow-hidden bg-[#f0f0f0]">
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-8 pb-20 overflow-hidden bg-[#ebebeb]">
       <div className="relative max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
           {/* Text Content */}
