@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import Button from './Button'
 
 // Feature card component - minimal design
@@ -67,8 +68,8 @@ export default function Features({ onPreOrderClick }: FeaturesProps) {
   ]
 
   return (
-    <section className="relative py-24 px-4 bg-gray-50 overflow-hidden">
-      <div className="relative max-w-5xl mx-auto">
+    <section className="relative py-24 px-4 bg-white overflow-hidden">
+      <div className="relative max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -81,16 +82,31 @@ export default function Features({ onPreOrderClick }: FeaturesProps) {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
+        {/* Two-column layout: Features + Product Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          {/* Features Grid */}
+          <div className="grid sm:grid-cols-2 gap-4">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
+          </div>
+
+          {/* Lifestyle Image */}
+          <div className="relative">
+            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/product-lifestyle.jpeg"
+                alt="Dawn alarm clock on a nightstand in a cozy bedroom setting"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
