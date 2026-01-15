@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { track } from '@vercel/analytics'
 import Button from './Button'
 
 interface PreOrderProps {
@@ -62,8 +63,10 @@ export default function PreOrder({ isModalOpen, onOpenModal, onCloseModal }: Pre
   const handleCheckout = (e: React.FormEvent) => {
     e.preventDefault()
     if (checkoutStep === 1) {
+      track('checkout_step_1')
       setCheckoutStep(2)
     } else if (checkoutStep === 2) {
+      track('checkout_step_2')
       setIsSubmitted(true)
     }
   }

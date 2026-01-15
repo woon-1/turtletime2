@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { track } from '@vercel/analytics'
 import Hero from '@/components/Hero'
 import ProblemSolution from '@/components/ProblemSolution'
 import Features from '@/components/Features'
@@ -13,9 +14,7 @@ export default function Home() {
 
   const handleOpenModal = () => {
     setIsModalOpen(true)
-    if (typeof window !== 'undefined') {
-      console.log('Analytics: Pre-order CTA clicked')
-    }
+    track('cta_click')
   }
 
   const handleCloseModal = () => {
